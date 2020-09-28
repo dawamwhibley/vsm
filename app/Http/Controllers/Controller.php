@@ -10,6 +10,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Log;
+use function GuzzleHttp\Promise\all;
 
 class Controller extends BaseController
 {
@@ -46,5 +47,33 @@ class Controller extends BaseController
         Log::info('>>>RANK ' . json_encode($rank));
         $data['hasil'] = $rank;
         return view('hasil', $data);
+    }
+
+    public function artikel(){
+        return view('artikel');
+    }
+
+    public function artikelPost(Request $request){
+        Log::info('>>>' . json_encode($request->all()));
+        $artikel = new Artikel();
+
+        $artikel->judul = $request->judul;
+        $artikel->deskripsi = $request->artikel;
+
+        $artikel->save();
+
+        return redirect('artikel/list');
+    }
+
+    public function artikelList(){
+        $artikels = Artikel::all();
+
+        return view('artikel-list', ['list' => $artikels]);
+    }
+    public function artikelHapus(Request $request){
+        Log::info('>>>' . json_encode($request->all()));
+        Artikel::where('id', '=', $request->id)->delete();
+
+        return redirect('artikel/list');
     }
 }

@@ -65,6 +65,14 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            .text {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2; /* number of lines to show */
+                -webkit-box-orient: vertical;
+            }
         </style>
     </head>
     <body>

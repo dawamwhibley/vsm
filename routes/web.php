@@ -18,3 +18,7 @@ Route::get('/', function () {
 });
 
 Route::get('/test', 'Controller@test');
+Route::get('/artikel', 'Controller@artikel');
+Route::post('/artikel', 'Controller@artikelPost');
+Route::get('/artikel/list', 'Controller@artikelList');
+Route::post('/artikel/hapus', 'Controller@artikelHapus');

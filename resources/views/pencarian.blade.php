@@ -1,6 +1,11 @@
 @extends('welcome')
 
 @section('content-section')
+    <div class="card">
+        <div class="card-header">
+            <a href="{{url('artikel/list')}}">List Artikel</a>
+        </div>
+    </div>
 
     <div class="flex-center position-ref full-height">
         <div class="content">
