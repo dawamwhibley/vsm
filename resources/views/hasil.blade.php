@@ -3,7 +3,7 @@
 @section('content-section')
     <div class="card">
         <div class="card-header">
-
+            <a href="{{url('/')}}">Kembali Ke Pencarian</a>
         </div>
         <div class="card-body">
             <div class="row">

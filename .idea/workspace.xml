@@ -19,14 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d317e16d-b7d7-43a9-9ce1-06bccaeeabdd" name="Default Changelist" comment="first commit">
-      <change afterPath="$PROJECT_DIR$/resources/views/artikel-list.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/artikel.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pencarian.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pencarian.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    <list default="true" id="d317e16d-b7d7-43a9-9ce1-06bccaeeabdd" name="Default Changelist" comment="update">
+      <change beforePath="$PROJECT_DIR$/resources/views/hasil.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/hasil.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,7 +192,7 @@
       <workItem from="1601249947632" duration="432000" />
       <workItem from="1601258301964" duration="10000" />
       <workItem from="1601328924537" duration="675000" />
-      <workItem from="1601330385205" duration="2906000" />
+      <workItem from="1601330385205" duration="3000000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1601330543200</created>
@@ -207,7 +201,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601330543200</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="update">
+      <created>1601333318987</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1601333318987</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,7 +227,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="WindowStateProjectService">
     <state x="466" y="157" width="424" height="487" key="FileChooserDialogImpl" timestamp="1601128459291">
@@ -237,10 +239,10 @@
       <screen x="0" y="30" width="1366" height="738" />
     </state>
     <state x="503" y="325" width="349" height="151" key="NewPhpFileDialog/0.30.1366.738@0.30.1366.738" timestamp="1601330807816" />
-    <state x="278" y="135" width="800" height="531" key="Vcs.Push.Dialog.v2" timestamp="1601330673867">
+    <state x="278" y="135" width="800" height="531" key="Vcs.Push.Dialog.v2" timestamp="1601333327024">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state x="278" y="135" width="800" height="531" key="Vcs.Push.Dialog.v2/0.30.1366.738@0.30.1366.738" timestamp="1601330673867" />
+    <state x="278" y="135" width="800" height="531" key="Vcs.Push.Dialog.v2/0.30.1366.738@0.30.1366.738" timestamp="1601333327024" />
     <state x="0" y="30" width="585" height="738" key="find.popup" timestamp="1601094910871">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
