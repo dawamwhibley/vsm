@@ -70,10 +70,16 @@ class Controller extends BaseController
 
         return view('artikel-list', ['list' => $artikels]);
     }
+
     public function artikelHapus(Request $request){
         Log::info('>>>' . json_encode($request->all()));
         Artikel::where('id', '=', $request->id)->delete();
 
         return redirect('artikel/list');
+    }
+
+    public function artikelDetail(Request $request){
+        $artikel = Artikel::where('id', '=', $request->id)->first();
+        return view('artikel-detail', ['artikel' => $artikel]);
     }
 }

@@ -14,6 +14,7 @@
                             <th>No Document</th>
                             <th>Judul</th>
                             <th>Ranking</th>
+                            <th>Detail</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -22,6 +23,7 @@
                                 <td>{{$h['id_doc']}}</td>
                                 <td>{{$h['judul']}}</td>
                                 <td>{{$h['ranking']}}</td>
+                                <td><a href="{{url('artikel/detail?id=' . $h['id_doc'])}}">Lihat</a></td>
                             </tr>
                         @endforeach
                         </tbody>

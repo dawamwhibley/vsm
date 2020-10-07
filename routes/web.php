@@ -22,3 +22,4 @@ Route::get('/artikel', 'Controller@artikel');
 Route::post('/artikel', 'Controller@artikelPost');
 Route::get('/artikel/list', 'Controller@artikelList');
 Route::post('/artikel/hapus', 'Controller@artikelHapus');
+Route::get('/artikel/detail', 'Controller@artikelDetail');
