@@ -10,15 +10,18 @@
             <table class="table">
                 <thead>
                 <tr>
-                    <th>No</th>
+                    <th>No.</th>
+                    <th>No Documen</th>
                     <th>Judul</th>
                     <th>Artikel</th>
                     <th>Hapus</th>
                 </tr>
                 </thead>
                 <tbody>
+                @php($i = 1)
                 @foreach($list as $l)
                     <tr>
+                        <td>{{$i++}}</td>
                         <td>{{$l->id}}</td>
                         <td>{{$l->judul}}</td>
                         <td><span class="text">{{$l->deskripsi}}</span></td>
