@@ -106,7 +106,7 @@ class PreProcessingController extends Controller
 //        $hasil = mysqli_query(mysqli_connect($host, $user, $pass, $db), "SELECT * FROM tb_katadasar WHERE katadasar = '".$kata."'");
 //        $row = mysqli_fetch_assoc($hasil);
         $row = KataDasar::where('katadasar', '=', $kata)->first();
-        Log::info('Kata Dasar >>> ' . json_encode($row));
+//        Log::info('Kata Dasar >>> ' . json_encode($row));
         return $row['katadasar'] ? $row['katadasar'] : NULL;
     }
 

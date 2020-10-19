@@ -100,6 +100,7 @@ class VSMController extends Controller
      */
     public static function df($term, $query, $dokumen_term)
     {
+        Log::info('term ' . json_encode($term));
         // start from 0 | start dari nol
         $arrayDf = [];
         foreach ($term as $key => $value) {
