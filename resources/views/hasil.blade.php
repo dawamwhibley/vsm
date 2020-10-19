@@ -19,12 +19,14 @@
                         </thead>
                         <tbody>
                         @foreach($hasil as $h)
-                            <tr>
-                                <td>{{$h['id_doc']}}</td>
-                                <td>{{$h['judul']}}</td>
-                                <td>{{$h['ranking']}}</td>
-                                <td><a href="{{url('artikel/detail?id=' . $h['id_doc'])}}">Lihat</a></td>
-                            </tr>
+                            @if($h['ranking']>0)
+                                <tr>
+                                    <td>{{$h['id_doc']}}</td>
+                                    <td>{{$h['judul']}}</td>
+                                    <td>{{$h['ranking']}}</td>
+                                    <td><a href="{{url('artikel/detail?id=' . $h['id_doc'])}}">Lihat</a></td>
+                                </tr>
+                            @endif
                         @endforeach
                         </tbody>
                     </table>
