@@ -11,7 +11,7 @@
                 <thead>
                 <tr>
                     <th>No.</th>
-                    <th>No Documen</th>
+                    <th>No Dokumen</th>
                     <th>Judul</th>
                     <th>Artikel</th>
                     <th>Hapus</th>
