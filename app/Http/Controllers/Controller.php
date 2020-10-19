@@ -50,10 +50,12 @@ class Controller extends BaseController
          // STEP 4 == mendapatkan ranking dengan VSM
          $rank = $vsm::get_rank($query, $arrayDokumen);
 
- //        Log::info('>>>RANK ' . json_encode($rank));
+        $rank = collect($rank)->sortBy('ranking')->reverse()->toArray();
+
          $data['hasil'] = $rank;
          return view('hasil', $data);
     }
+
 
     public function artikel(){
         return view('artikel');
