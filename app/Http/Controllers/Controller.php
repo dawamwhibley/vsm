@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Artikel;
+use App\Jobs\ProcessCalculate;
 use App\KataDasar;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -19,34 +20,39 @@ class Controller extends BaseController
     public function test(Request $request){
         Log::info('TEST CONTROLLER ' . json_encode($request->keyword));
 
-        // == STEP 1 inisialisasi
-        $preprocess = new PreProcessingController();
-        $vsm = new VSMController();
+//       ProcessCalculate::dispatch()
+//           ->delay(now()->addSeconds(5));
+//       return redirect('/');
 
-        // == STEP 2 mendapatkan kata dasar
-        $query = $preprocess::preprocess($request->keyword);
+         // == STEP 1 inisialisasi
+         $preprocess = new PreProcessingController();
+         $vsm = new VSMController();
 
-        // == STEP 3 medapatkan dokumen ke array
-        //$connect = mysqli_query(mysqli_connect('localhost', 'root', '', 'vsm'), "SELECT * FROM artikel");
-        $artikel = Artikel::all();
-        $arrayDokumen = [];
-        foreach ($artikel as $ar) {
-            $arrayDoc = [
-                'id_doc' => $ar['id'],
-                'judul' => $ar['judul'],
-                'dokumen' => implode(" ", $preprocess::preprocess($ar['deskripsi']))
-            ];
-            array_push($arrayDokumen, $arrayDoc);
-        }
+         // == STEP 2 mendapatkan kata dasar
+         $query = $preprocess::preprocess($request->keyword);
 
-        Log::info('>>>>' .json_encode($arrayDokumen));
+         // == STEP 3 medapatkan dokumen ke array
+         //$connect = mysqli_query(mysqli_connect('localhost', 'root', '', 'vsm'), "SELECT * FROM artikel");
+         $artikel = Artikel::all();
+         $arrayDokumen = [];
+         foreach ($artikel as $ar) {
+             $arrayDoc = [
+                 'id_doc' => $ar['id'],
+                 'judul' => $ar['judul'],
+                 'dokumen' => implode(" ", $preprocess::preprocess($ar['deskripsi']))
+             ];
+             array_push($arrayDokumen, $arrayDoc);
+         }
 
-        // STEP 4 == mendapatkan ranking dengan VSM
-        $rank = $vsm::get_rank($query, $arrayDokumen);
+         Log::info('Data Query . ' .json_encode($query));
+         Log::info('Data Doc . ' .json_encode($arrayDokumen));
 
-        Log::info('>>>RANK ' . json_encode($rank));
-        $data['hasil'] = $rank;
-        return view('hasil', $data);
+         // STEP 4 == mendapatkan ranking dengan VSM
+         $rank = $vsm::get_rank($query, $arrayDokumen);
+
+ //        Log::info('>>>RANK ' . json_encode($rank));
+         $data['hasil'] = $rank;
+         return view('hasil', $data);
     }
 
     public function artikel(){
@@ -54,7 +60,7 @@ class Controller extends BaseController
     }
 
     public function artikelPost(Request $request){
-        Log::info('>>>' . json_encode($request->all()));
+//        Log::info('>>>' . json_encode($request->all()));
         $artikel = new Artikel();
 
         $artikel->judul = $request->judul;
@@ -72,7 +78,7 @@ class Controller extends BaseController
     }
 
     public function artikelHapus(Request $request){
-        Log::info('>>>' . json_encode($request->all()));
+//        Log::info('>>>' . json_encode($request->all()));
         Artikel::where('id', '=', $request->id)->delete();
 
         return redirect('artikel/list');
