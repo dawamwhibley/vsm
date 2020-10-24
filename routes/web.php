@@ -1,5 +1,6 @@
 <?php
 
+use App\Jobs\ProcessCalculate;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,8 +17,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('pencarian');
 });
+Route::get('/hasil', 'Controller@hasil');
+Route::get('/cekhasil', 'Controller@cekhasil');
 
 Route::get('/test', 'Controller@test');
+
+//Route::get('/test', function (){
+//    $job = (new ProcessCalculate())->delay(now()->addSecond(10));
+//    dispatch($job);
+//    return "";
+//});
 Route::get('/artikel', 'Controller@artikel');
 Route::post('/artikel', 'Controller@artikelPost');
 Route::get('/artikel/list', 'Controller@artikelList');

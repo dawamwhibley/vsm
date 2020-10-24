@@ -12,6 +12,7 @@
         <!-- Bootstrap -->
         <link rel="stylesheet" href="{{asset('bootstrap-4.4.1-dist/css/bootstrap.css')}}">
         <script src="{{asset('bootstrap-4.4.1-dist/js/bootstrap.js')}}" ></script>
+        <script src="{{asset('jquery-3.5.1.min.js')}}" ></script>
 
         <!-- Styles -->
         <style>
@@ -77,5 +78,7 @@
     </head>
     <body>
     @yield('content-section')
+
+    @yield('js')
     </body>
 </html>

@@ -18,17 +18,17 @@ class VSMController extends Controller
     public static function get_rank($query, $dokumen)
     {
         $term           = self::term($query, $dokumen);
-//        Log::info('TERM ' . json_encode($term));
+        Log::info('TERM ' . json_encode($term));
         $dokumen_term   = self::dokumen_term($dokumen);
-//        Log::info('Dokoment TERM ' . json_encode($dokumen_term));
+        Log::info('Dokoment TERM ' . json_encode($dokumen_term));
         $df             = self::df($term, $query, $dokumen_term);
-//        Log::info('DF ' . json_encode($df));
+        Log::info('DF ' . json_encode($df));
         $idf            = self::idf($query, $dokumen_term, $df);
-//        Log::info('IDF ' . json_encode($idf));
+        Log::info('IDF ' . json_encode($idf));
         $bobot          = self::bobot($query, $dokumen_term, $idf);
-//        Log::info('BOBOT ' . json_encode($bobot));
+        Log::info('BOBOT ' . json_encode($bobot));
         $cos_similarity = self::cosine_similarity($bobot);
-//        Log::info('COS SIMILARITY ' . json_encode($cos_similarity));
+        Log::info('COS SIMILARITY ' . json_encode($cos_similarity));
 
         return $cos_similarity;
     }
@@ -100,6 +100,7 @@ class VSMController extends Controller
      */
     public static function df($term, $query, $dokumen_term)
     {
+        Log::info('ANJENG');
         Log::info('term ' . json_encode($term));
         // start from 0 | start dari nol
         $arrayDf = [];
