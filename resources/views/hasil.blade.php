@@ -58,7 +58,7 @@
                     success: function (data) {
                         console.log('cek hasil', data);
                         var contentHtml = '';
-                        var i = 0 ;
+                        var i = 1 ;
                         $.each(data, function (i, d) {
                             console.log('>>>>', d);
                             contentHtml += '<tr>' +
@@ -71,10 +71,10 @@
                         })
 
                         $('#tbl-hasil tbody').html(contentHtml);
-                        $('.spinner-border').addClass('d-none')
 
                         if (data.length > 0) {
                             clearInterval(interval);
+                            $('.spinner-border').addClass('d-none')
                         }
                     }
                 });
