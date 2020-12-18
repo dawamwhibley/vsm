@@ -69,10 +69,11 @@ class ProcessCalculate implements ShouldQueue
         $rank = collect($rank)->sortBy('ranking')->reverse()->toArray();
 
         $data['hasil'] = $rank;
-
+        $count_data = 0;
         foreach ($rank as $obj){
             Log::info('>>>> ' . json_encode($obj));
             if($obj['ranking']>0){
+                $count_data++;
                 Log::info('MASUK');
                 $hasil = new Hasil();
                 $hasil->id_doc = $obj['id_doc'];
@@ -81,6 +82,14 @@ class ProcessCalculate implements ShouldQueue
 
                 $hasil->save();
             }
+        }
+        if($count_data==0){
+            $hasil = new Hasil();
+            $hasil->id_doc = 0;
+            $hasil->judul = 'Kosong';
+            $hasil->ranking = 'Data Tidak Ditemukan';
+
+            $hasil->save();
         }
 
 
