@@ -86,8 +86,8 @@ class ProcessCalculate implements ShouldQueue
         if($count_data==0){
             $hasil = new Hasil();
             $hasil->id_doc = 0;
-            $hasil->judul = 'Kosong';
-            $hasil->ranking = 'Data Tidak Ditemukan';
+            $hasil->judul = 'Data Tidak Ditemukan';
+            $hasil->ranking = 0;
 
             $hasil->save();
         }
